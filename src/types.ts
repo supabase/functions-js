@@ -14,3 +14,9 @@ export type FunctionInvokeOptions = {
   body?: Blob | BufferSource | FormData | URLSearchParams | ReadableStream<Uint8Array> | string
   responseType?: keyof typeof ResponseType
 }
+
+export type JSONValue = string | number | boolean | { [key: string]: JSONValue } | Array<JSONValue>
+
+export interface JSONObject {
+  [key: string]: JSONValue
+}

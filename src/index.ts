@@ -1,5 +1,5 @@
 import { resolveFetch } from './helper'
-import { Fetch, FunctionInvokeOptions } from './types'
+import { Fetch, FunctionInvokeOptions, JSONObject } from './types'
 
 export class FunctionsClient {
   protected url: string
@@ -29,7 +29,7 @@ export class FunctionsClient {
    * `body`: the body of the request
    * `responseType`: how the response should be parsed. The default is `json`
    */
-  async invoke<T = string>(
+  async invoke<T = JSONObject>(
     functionName: string,
     invokeOptions?: FunctionInvokeOptions
   ): Promise<{ data: T | null; error: Error | null }> {
