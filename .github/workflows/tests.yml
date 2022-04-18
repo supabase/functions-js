@@ -58,6 +58,7 @@ jobs:
           github_repo: test-reports
           allure_results: allure-results
           allure_history: allure-history
+          subfolder: functions-js
           keep_reports: 50
 
       - name: Deploy report to Github Pages
@@ -78,4 +79,4 @@ jobs:
          context: 'Test report'
          state: 'success'
          sha: ${{ github.event.pull_request.head.sha || github.sha }}
-         target_url: https://supabase.github.io/test-reports/${{ github.run_number }}
+         target_url: https://supabase.github.io/test-reports/functions-js/${{ github.run_number }}
