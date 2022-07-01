@@ -1,24 +1,40 @@
 import { resolveFetch } from './helper'
 import { Fetch, FunctionInvokeOptions } from './types'
 
+export class HttpError extends Error {
+  statusCode: number
+  statusText: string
+  data: any
+  constructor(statusCode: number, statusText: string, data: any) {
+    super('Invoke call returned HTTP Error code')
+    this.statusCode = statusCode
+    this.statusText = statusText
+    this.data = data
+  }
+}
+
 export class FunctionsClient {
   protected url: string
   protected headers: Record<string, string>
   protected fetch: Fetch
+  protected shouldThrowOnError: boolean
 
   constructor(
     url: string,
     {
       headers = {},
       customFetch,
+      shouldThrowOnError = false,
     }: {
       headers?: Record<string, string>
       customFetch?: Fetch
+      shouldThrowOnError?: boolean
     } = {}
   ) {
     this.url = url
     this.headers = headers
     this.fetch = resolveFetch(customFetch)
+    this.shouldThrowOnError = shouldThrowOnError
   }
 
   /**
@@ -51,7 +67,7 @@ export class FunctionsClient {
 
       const isRelayError = response.headers.get('x-relay-error')
       if (isRelayError && isRelayError === 'true') {
-        return { data: null, error: new Error(await response.text()) }
+        throw new Error(await response.text())
       }
 
       let data
@@ -66,8 +82,16 @@ export class FunctionsClient {
         data = await response.text()
       }
 
+      // Detect HTTP status codes other than 2xx and reject as error together with statusCode property
+      if (!response.ok) {
+        throw new HttpError(response.status, response.statusText, data)
+      }
+
       return { data, error: null }
     } catch (error: any) {
+      if (this.shouldThrowOnError) {
+        throw error
+      }
       return { data: null, error }
     }
   }
