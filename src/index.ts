@@ -1,14 +1,30 @@
 import { resolveFetch } from './helper'
 import { Fetch, FunctionInvokeOptions } from './types'
 
-export class HttpError extends Error {
-  statusCode: number
+/**
+ * Response format
+ *
+ */
+ interface FunctionsResponseBase {
+  status?: number
+  statusText?: string
+}
+interface FunctionsResponseSuccess<T> extends FunctionsResponseBase {
+  status: number
   statusText: string
+  error: null
+  data: T
+}
+interface FunctionsResponseFailure extends FunctionsResponseBase {
+  error: any
+  data: null
+}
+export type FunctionsResponse<T> = FunctionsResponseSuccess<T> | FunctionsResponseFailure
+
+export class FunctionsError extends Error {
   data: any
-  constructor(statusCode: number, statusText: string, data: any) {
-    super('Invoke call returned HTTP Error code')
-    this.statusCode = statusCode
-    this.statusText = statusText
+  constructor(data: any) {
+    super('Invoke call returned non-2xx status')
     this.data = data
   }
 }
@@ -56,7 +72,11 @@ export class FunctionsClient {
   async invoke<T = any>(
     functionName: string,
     invokeOptions?: FunctionInvokeOptions
-  ): Promise<{ data: T; error: null } | { data: null; error: Error }> {
+  ): Promise<FunctionsResponse<T>> {
+
+    let status: number | undefined
+    let statusText: string | undefined
+    
     try {
       const { headers, body } = invokeOptions ?? {}
       const response = await this.fetch(`${this.url}/${functionName}`, {
@@ -64,6 +84,9 @@ export class FunctionsClient {
         headers: Object.assign({}, this.headers, headers),
         body,
       })
+
+      status = response.status
+      statusText = response.statusText
 
       const isRelayError = response.headers.get('x-relay-error')
       if (isRelayError && isRelayError === 'true') {
@@ -82,17 +105,26 @@ export class FunctionsClient {
         data = await response.text()
       }
 
-      // Detect HTTP status codes other than 2xx and reject as error together with statusCode property
+      // Detect HTTP status codes other than 2xx and reject as error
       if (!response.ok) {
-        throw new HttpError(response.status, response.statusText, data)
+        throw new FunctionsError(data)
       }
 
-      return { data, error: null }
+      const success: FunctionsResponseSuccess<T> = { data, error: null, status, statusText }
+      return success
     } catch (error: any) {
       if (this.shouldThrowOnError) {
         throw error
       }
-      return { data: null, error }
+
+      const failure: FunctionsResponseFailure = { data: null, error }
+      if (status) (
+        failure.status = status
+      )
+      if (statusText) {
+        failure.statusText = statusText
+      }
+      return failure
     }
   }
 }
