@@ -118,9 +118,9 @@ export class FunctionsClient {
       }
 
       const failure: FunctionsResponseFailure = { data: null, error }
-      if (status) (
+      if (status) {
         failure.status = status
-      )
+      }
       if (statusText) {
         failure.statusText = statusText
       }
