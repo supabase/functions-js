@@ -1,24 +1,56 @@
 import { resolveFetch } from './helper'
 import { Fetch, FunctionInvokeOptions } from './types'
 
+/**
+ * Response format
+ *
+ */
+ interface FunctionsResponseBase {
+  status?: number
+  statusText?: string
+}
+interface FunctionsResponseSuccess<T> extends FunctionsResponseBase {
+  status: number
+  statusText: string
+  error: null
+  data: T
+}
+interface FunctionsResponseFailure extends FunctionsResponseBase {
+  error: any
+  data: null
+}
+export type FunctionsResponse<T> = FunctionsResponseSuccess<T> | FunctionsResponseFailure
+
+export class FunctionsError extends Error {
+  data: any
+  constructor(data: any) {
+    super('Invoke call returned non-2xx status')
+    this.data = data
+  }
+}
+
 export class FunctionsClient {
   protected url: string
   protected headers: Record<string, string>
   protected fetch: Fetch
+  protected shouldThrowOnError: boolean
 
   constructor(
     url: string,
     {
       headers = {},
       customFetch,
+      shouldThrowOnError = false,
     }: {
       headers?: Record<string, string>
       customFetch?: Fetch
+      shouldThrowOnError?: boolean
     } = {}
   ) {
     this.url = url
     this.headers = headers
     this.fetch = resolveFetch(customFetch)
+    this.shouldThrowOnError = shouldThrowOnError
   }
 
   /**
@@ -40,7 +72,11 @@ export class FunctionsClient {
   async invoke<T = any>(
     functionName: string,
     invokeOptions?: FunctionInvokeOptions
-  ): Promise<{ data: T; error: null } | { data: null; error: Error }> {
+  ): Promise<FunctionsResponse<T>> {
+
+    let status: number | undefined
+    let statusText: string | undefined
+    
     try {
       const { headers, body } = invokeOptions ?? {}
       const response = await this.fetch(`${this.url}/${functionName}`, {
@@ -49,9 +85,12 @@ export class FunctionsClient {
         body,
       })
 
+      status = response.status
+      statusText = response.statusText
+
       const isRelayError = response.headers.get('x-relay-error')
       if (isRelayError && isRelayError === 'true') {
-        return { data: null, error: new Error(await response.text()) }
+        throw new Error(await response.text())
       }
 
       let data
@@ -66,9 +105,26 @@ export class FunctionsClient {
         data = await response.text()
       }
 
-      return { data, error: null }
+      // Detect HTTP status codes other than 2xx and reject as error
+      if (!response.ok) {
+        throw new FunctionsError(data)
+      }
+
+      const success: FunctionsResponseSuccess<T> = { data, error: null, status, statusText }
+      return success
     } catch (error: any) {
-      return { data: null, error }
+      if (this.shouldThrowOnError) {
+        throw error
+      }
+
+      const failure: FunctionsResponseFailure = { data: null, error }
+      if (status) {
+        failure.status = status
+      }
+      if (statusText) {
+        failure.statusText = statusText
+      }
+      return failure
     }
   }
 }
