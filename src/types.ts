@@ -1,14 +1,24 @@
 export type Fetch = typeof fetch
 
-export enum ResponseType {
-  json,
-  text,
-  arrayBuffer,
-  blob,
-}
+type requestTransformer = (data: any) => RequestInit
+type responseTransformer = (reponse: Response) => Promise<any>
 
 export type FunctionInvokeOptions = {
-  headers?: { [key: string]: string }
-  body?: Blob | BufferSource | FormData | URLSearchParams | ReadableStream<Uint8Array> | string
-  responseType?: keyof typeof ResponseType
+  requestTransform: requestTransformer
+  responseTransform: responseTransformer
 }
+
+/**
+ * Response format
+ *
+ */
+
+ interface FunctionsResponseSuccess {
+  data: any
+  error: null
+}
+interface FunctionsResponseFailure {
+  data: null
+  error: any
+}
+export type FunctionsResponse = FunctionsResponseSuccess | FunctionsResponseFailure
