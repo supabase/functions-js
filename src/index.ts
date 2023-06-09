@@ -1,9 +1,12 @@
 export { FunctionsClient } from './FunctionsClient'
 export {
-  FunctionInvokeOptions,
   FunctionsError,
   FunctionsFetchError,
   FunctionsHttpError,
   FunctionsRelayError,
+} from './types'
+
+export type {
   FunctionsResponse,
+  FunctionInvokeOptions  
 } from './types'
