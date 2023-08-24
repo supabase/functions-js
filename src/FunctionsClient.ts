@@ -30,7 +30,7 @@ export class FunctionsClient {
 
   /**
    * Updates the authorization header
-   * @param token - the new jwt token sent in the authorisation header
+   * @param token - the new jwt token sent in the authorization header
    */
   setAuth(token: string) {
     this.headers.Authorization = `Bearer ${token}`
@@ -45,6 +45,7 @@ export class FunctionsClient {
     functionName: string,
     options: FunctionInvokeOptions = {}
   ): Promise<FunctionsResponse<T>> {
+    let response = null;
     try {
       const { headers, method, body: functionArgs } = options
 
@@ -77,7 +78,7 @@ export class FunctionsClient {
         }
       }
 
-      const response = await this.fetch(`${this.url}/${functionName}`, {
+      response = await this.fetch(`${this.url}/${functionName}`, {
         method: method || 'POST',
         // headers priority is (high to low):
         // 1. invoke-level headers
@@ -113,6 +114,10 @@ export class FunctionsClient {
 
       return { data, error: null }
     } catch (error) {
+      if (response && response.body) {
+        await response.body.cancel();
+      }
+
       return { data: null, error }
     }
   }
