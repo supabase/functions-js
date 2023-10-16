@@ -102,7 +102,7 @@ export class FunctionsClient {
       let data: any
       if (responseType === 'application/json') {
         data = await response.json()
-      } else if (responseType === 'application/octet-stream') {
+      } else if (responseType === 'application/octet-stream' || responseType === 'application/pdf') {
         data = await response.blob()
       } else if (responseType === 'multipart/form-data') {
         data = await response.formData()
