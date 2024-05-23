@@ -88,6 +88,14 @@ export class FunctionsClient {
         }
       }
 
+      if (options.params) {
+        const searchParams = new URLSearchParams()
+        for (const key in options.params) {
+          searchParams.set(key, options.params[key])
+        }
+        functionName = `${functionName}?${searchParams.toString()}`
+      }
+
       const response = await this.fetch(`${this.url}/${functionName}`, {
         method: method || 'POST',
         // headers priority is (high to low):
