@@ -38,13 +38,17 @@ describe('params reached to function', () => {
     })
 
     log('invoke mirror')
-    const { data, error } = await fclient.invoke<MirrorResponse>('mirror', {})
+    const { data, error } = await fclient.invoke<MirrorResponse>('mirror', {
+      params: {
+        hello: 'world',
+      }
+    })
 
     log('assert no error')
     expect(error).toBeNull()
 
     const expected = {
-      url: 'http://localhost:8000/mirror',
+      url: 'http://localhost:8000/mirror?hello=world',
       method: 'POST',
       headers: data?.headers ?? [],
       body: '',
