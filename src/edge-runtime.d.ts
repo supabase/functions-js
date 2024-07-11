@@ -1,3 +1,5 @@
+import OpenAI from 'openai'
+
 declare namespace Supabase {
   export interface ModelOptions {
     /**
@@ -30,7 +32,10 @@ declare namespace Supabase {
     /**
      * Execute the given prompt in model session
      */
-    run(prompt: string, modelOptions?: ModelOptions): unknown
+    run(
+      prompt: string | Omit<OpenAI.Chat.ChatCompletionCreateParams, 'model' | 'stream'>,
+      modelOptions?: ModelOptions
+    ): unknown
   }
 
   /**
