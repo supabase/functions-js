@@ -21,6 +21,11 @@ declare namespace Supabase {
      * Automatically abort the request to the model after specified time (in seconds). Applies only for LLMs like `mistral` (default: 60)
      */
     timeout?: number
+
+    /**
+     * Mode for the inference API host. (default: 'ollama')
+     */
+    mode?: 'ollama' | 'openaicompatible'
   }
 
   export class Session {
