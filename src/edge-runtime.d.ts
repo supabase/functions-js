@@ -25,7 +25,8 @@ declare namespace Supabase {
     /**
      * Mode for the inference API host. (default: 'ollama')
      */
-    mode?: 'ollama' | 'openaicompatible'
+    mode?: 'ollama' | 'openaicompatible',
+    signal?: AbortSignal
   }
 
   export class Session {
