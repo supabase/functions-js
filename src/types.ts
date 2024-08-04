@@ -10,7 +10,7 @@ export interface FunctionsResponseSuccess<T> {
 }
 export interface FunctionsResponseFailure {
   data: null
-  error: any
+  error: FunctionsError
 }
 export type FunctionsResponse<T> = FunctionsResponseSuccess<T> | FunctionsResponseFailure
 
