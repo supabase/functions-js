@@ -77,11 +77,26 @@ declare namespace Supabase {
     score: number;
   };
 
+  type PipelineTasks =
+    | 'feature-extraction'
+    | 'supabase-gte'
+    | 'gte-small'
+    | 'sentiment-analysis';
+
   /**
    * Pipelines provide a high-level, easy to use, API for running machine learning models.
    */
-  export type PipelineTasks = {
+  export class Pipeline<K extends PipelineTasks> {
     /**
+     * Create a new pipeline using given task
+     * @param task The task of the pipeline.
+     * @param variant Witch model variant to use by the pipeline.
+     */
+    constructor(task: K, variant?: string);
+
+    /**
+     * {@label pipeline-feature-extraction}
+     *
      * Feature extraction pipeline using no model head. This pipeline extracts the hidden
      * states from the base transformer, which can be used as features in downstream tasks.
      *
@@ -90,24 +105,35 @@ declare namespace Supabase {
      * const extractor = new Supabase.ai.Pipeline('feature-extraction');
      * const output = await extractor('This is a simple test.');
      *
-     * // Embeddings: [0.05939, 0.02165, ...]
+     * // output: [0.05939, 0.02165, ...]
+     *
+     * ```
+     *
+     * **Example:** Batch inference, processing multiples in parallel
+     * ```javascript
+     * const extractor = new Supabase.ai.Pipeline('feature-extraction');
+     * const output = await extractor(["I'd use Supabase in all of my projects", "Just a test for embedding"]);
+     *
+     * // output: [[0.07399, 0.01462, ...], [-0.08963, 0.01234, ...]]
      *
      * ```
      */
-    ['feature-extraction']: <T = string | string[]>(
-      input: T,
+    run<I extends string | string[]>(
+      input: K extends 'feature-extraction' ? I : never,
       opts?: FeatureExtractionOptions,
-    ) => Promise<T extends string[] ? FeatureExtractionOutput[] : FeatureExtractionOutput>;
+    ): Promise<I extends string[] ? FeatureExtractionOutput[] : FeatureExtractionOutput>;
+
     /**
      * Feature extraction pipeline using no model head.
      * This pipeline does the same as `'feature-extraction'` but using the `'Supabase/gte-small'` as default model.
+     *
+     * {@link run:pipeline-feature-extraction}
      */
-    ['supabase-gte']: PipelineTasks['feature-extraction'];
-    /**
-     * Feature extraction pipeline using no model head.
-     * This pipeline does the same as `'feature-extraction'` but using the `'Supabase/gte-small'` as default model.
-     */
-    ['gte-small']: PipelineTasks['feature-extraction'];
+    run<I extends string | string[]>(
+      input: K extends 'supabase-gte' | 'gte-small' ? I : never,
+      opts?: FeatureExtractionOptions,
+    ): Promise<I extends string[] ? FeatureExtractionOutput[] : FeatureExtractionOutput>;
+
     /**
      * Text classification pipeline using any `ModelForSequenceClassification`.
      *
@@ -116,29 +142,21 @@ declare namespace Supabase {
      * const classifier = new Supabase.ai.Pipeline('sentiment-analysis');
      * const output = await classifier('I love Supabase!');
      *
-     * // Sentiment: {'label': 'POSITIVE', 'score': 0.999817686}
+     * // output: {label: 'POSITIVE', score: 1.00}
+     *
+     * ```
+     *
+     * **Example:** Batch inference, processing multiples in parallel
+     * ```javascript
+     * const classifier = new Supabase.ai.Pipeline('sentiment-analysis');
+     * const output = await classifier(['Cats are fun', 'Java is annoying']);
+     *
+     * // output: [{label: 'POSITIVE', score: 0.99 }, {label: 'NEGATIVE', score: 0.97}]
      *
      * ```
      */
-    ['sentiment-analysis']: <T = string | string[]>(
-      input: T,
-    ) => Promise<T extends string[] ? TextClassificationOutput[] : TextClassificationOutput>;
-  };
-
-  /**
-   * Pipelines provide a high-level, easy to use, API for running machine learning models.
-   */
-  export class Pipeline<T extends keyof PipelineTasks> {
-    /**
-     * Create a new pipeline using given task
-     * @param task The task of the pipeline.
-     * @param variant Witch model variant to use by the pipeline.
-     */
-    constructor(task: T, variant?: string);
-
-    /**
-     * Executes the given input in the pipeline.
-     */
-    run: PipelineTasks[T];
+    run<I extends string | string[]>(
+      input: K extends 'sentiment-analysis' ? I : never,
+    ): Promise<I extends string[] ? TextClassificationOutput[] : TextClassificationOutput>;
   }
 }
