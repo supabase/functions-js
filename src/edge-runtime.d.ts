@@ -77,11 +77,38 @@ declare namespace Supabase {
     score: number;
   };
 
+  export type ZeroShotClassificationInput = {
+    /** The text to classify.*/
+    text: string;
+    /** The set of possible class labels to classify.*/
+    candidate_labels: string[];
+  };
+
+  /** Parameters specific to zero-shot classification pipelines.*/
+  export type ZeroShotClassificationOptions = {
+    /**
+     * Whether or not multiple candidate labels can be true.
+     * If `false`, the scores are normalized such that the sum of the label likelihoods for each sequence is 1.
+     * If `true`, the labels are considered independent and probabilities are normalized for each candidate by doing a softmax
+     * of the entailment score vs. the contradiction score.
+     */
+    multi_label?: boolean;
+    /**
+     * The template used to turn each label into an NLI-style hypothesis.
+     * This template must include a `{}` or similar syntax for the candidate label to be inserted into the template.
+     * For example, the default template is `"This example is {}."` With the candidate label `"sports"`, this would be fed into the model like `"<cls> sequence to classify <sep> This example is sports . <sep>".`
+     * The default template works well in many cases, but it may be worthwhile to experiment with different templates depending on their task setting.
+     */
+    hypothesis_template?: string;
+  };
+
   type PipelineTasks =
     | 'feature-extraction'
     | 'supabase-gte'
     | 'gte-small'
-    | 'sentiment-analysis';
+    | 'text-classification'
+    | 'sentiment-analysis'
+    | 'zero-shot-classification';
 
   /**
    * Pipelines provide a high-level, easy to use, API for running machine learning models.
@@ -139,7 +166,7 @@ declare namespace Supabase {
      *
      * **Example:** Instantiate pipeline using the `Pipeline` class.
      * ```javascript
-     * const classifier = new Supabase.ai.Pipeline('sentiment-analysis');
+     * const classifier = new Supabase.ai.Pipeline('text-classification');
      * const output = await classifier('I love Supabase!');
      *
      * // output: {label: 'POSITIVE', score: 1.00}
@@ -156,7 +183,54 @@ declare namespace Supabase {
      * ```
      */
     run<I extends string | string[]>(
-      input: K extends 'sentiment-analysis' ? I : never,
+      input: K extends 'text-classification' | 'sentiment-analysis' ? I : never,
     ): Promise<I extends string[] ? TextClassificationOutput[] : TextClassificationOutput>;
+
+    /**
+     * NLI-based zero-shot classification pipeline using a `ModelForSequenceClassification`.
+     * Equivalent of `text-classification` pipelines, but these models don’t require a hardcoded number of potential classes, they can be chosen at runtime. It usually means it’s slower but it is much more flexible.
+     *
+     * **Example:** Instantiate pipeline using the `Pipeline` class.
+     * ```javascript
+     * const classifier = new Supabase.ai.Pipeline('zero-shot-classification');
+     * const output = await classifier({
+     *  text: 'one day I will see the world',
+     *  candidate_labels: ['travel', 'cooking', 'exploration']
+     * });
+     *
+     * // output: [{label: "travel", score: 0.797}, {label: "exploration", score: 0.199}, {label: "cooking", score: 0.002}]
+     *
+     * ```
+     *
+     * **Example:** Handling multiple correct labels
+     * ```javascript
+     * const classifier = new Supabase.ai.Pipeline('zero-shot-classification');
+     * const input = {
+     *  text: 'one day I will see the world',
+     *  candidate_labels: ['travel', 'cooking', 'exploration']
+     * };
+     * const output = await classifier(input, { multi_label: true });
+     *
+     * // output: [{label: "travel", score: 0.994}, {label: "exploration", score: 0.938}, {label: "cooking", score: 0.001}]
+     *
+     * ```
+     *
+     * **Example:** Custom hypothesis template
+     * ```javascript
+     * const classifier = new Supabase.ai.Pipeline('zero-shot-classification');
+     * const input = {
+     *  text: 'one day I will see the world',
+     *  candidate_labels: ['travel', 'cooking', 'exploration']
+     * };
+     * const output = await classifier(input, { hypothesis_template: "This example is NOT about {}");
+     *
+     * // output: [{label: "cooking", score: 0.47}, {label: "exploration", score: 0.26}, {label: "travel", score: 0.26}]
+     *
+     * ```
+     */
+    run<I extends ZeroShotClassificationInput>(
+      input: K extends 'zero-shot-classification' ? I : never,
+      opts: ZeroShotClassificationOptions,
+    ): Promise<TextClassificationOutput[]>;
   }
 }
