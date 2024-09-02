@@ -61,7 +61,7 @@ declare namespace Supabase {
   /** Parameters specific to feature extraction pipelines. */
   export type FeatureExtractionOptions = {
     /** Pool embeddings by taking their mean. */
-    mean_pool?: boolean;
+    meanPool?: boolean;
     /** Whether or not to normalize the embeddings in the last dimension. */
     normalize?: boolean;
   };
@@ -81,7 +81,7 @@ declare namespace Supabase {
     /** The text to classify.*/
     text: string;
     /** The set of possible class labels to classify.*/
-    candidate_labels: string[];
+    candidateLabels: string[];
   };
 
   /** Parameters specific to zero-shot classification pipelines.*/
@@ -92,14 +92,14 @@ declare namespace Supabase {
      * If `true`, the labels are considered independent and probabilities are normalized for each candidate by doing a softmax
      * of the entailment score vs. the contradiction score.
      */
-    multi_label?: boolean;
+    multiLabel?: boolean;
     /**
      * The template used to turn each label into an NLI-style hypothesis.
      * This template must include a `{}` or similar syntax for the candidate label to be inserted into the template.
      * For example, the default template is `"This example is {}."` With the candidate label `"sports"`, this would be fed into the model like `"<cls> sequence to classify <sep> This example is sports . <sep>".`
      * The default template works well in many cases, but it may be worthwhile to experiment with different templates depending on their task setting.
      */
-    hypothesis_template?: string;
+    hypothesisTemplate?: string;
   };
 
   type PipelineTasks =
@@ -195,7 +195,7 @@ declare namespace Supabase {
      * const classifier = new Supabase.ai.Pipeline('zero-shot-classification');
      * const output = await classifier({
      *  text: 'one day I will see the world',
-     *  candidate_labels: ['travel', 'cooking', 'exploration']
+     *  candidateLabels: ['travel', 'cooking', 'exploration']
      * });
      *
      * // output: [{label: "travel", score: 0.797}, {label: "exploration", score: 0.199}, {label: "cooking", score: 0.002}]
@@ -207,9 +207,9 @@ declare namespace Supabase {
      * const classifier = new Supabase.ai.Pipeline('zero-shot-classification');
      * const input = {
      *  text: 'one day I will see the world',
-     *  candidate_labels: ['travel', 'cooking', 'exploration']
+     *  candidateLabels: ['travel', 'cooking', 'exploration']
      * };
-     * const output = await classifier(input, { multi_label: true });
+     * const output = await classifier(input, { multiLabel: true });
      *
      * // output: [{label: "travel", score: 0.994}, {label: "exploration", score: 0.938}, {label: "cooking", score: 0.001}]
      *
@@ -220,9 +220,9 @@ declare namespace Supabase {
      * const classifier = new Supabase.ai.Pipeline('zero-shot-classification');
      * const input = {
      *  text: 'one day I will see the world',
-     *  candidate_labels: ['travel', 'cooking', 'exploration']
+     *  candidateLabels: ['travel', 'cooking', 'exploration']
      * };
-     * const output = await classifier(input, { hypothesis_template: "This example is NOT about {}");
+     * const output = await classifier(input, { hypothesisTemplate: "This example is NOT about {}");
      *
      * // output: [{label: "cooking", score: 0.47}, {label: "exploration", score: 0.26}, {label: "travel", score: 0.26}]
      *
