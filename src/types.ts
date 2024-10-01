@@ -83,4 +83,8 @@ export type FunctionInvokeOptions = {
     | ReadableStream<Uint8Array>
     | Record<string, any>
     | string
+  /**
+   * The query parameters to send with the request.
+   */
+  params?: Record<string, any>
 }
