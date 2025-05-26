@@ -102,10 +102,12 @@ export class FunctionsClient {
 
       const isRelayError = response.headers.get('x-relay-error')
       if (isRelayError && isRelayError === 'true') {
+        response.body?.cancel()
         throw new FunctionsRelayError(response)
       }
 
       if (!response.ok) {
+        response.body?.cancel()
         throw new FunctionsHttpError(response)
       }
 
