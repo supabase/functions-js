@@ -15,10 +15,12 @@ on:
 
 jobs:
   build-preview:
-    # Only run if PR has the 'trigger: preview' label
+    # Only run if PR has the 'trigger: preview' label and is on the correct repository
     if: |
+      github.repository == 'supabase/functions-js' &&
       contains(github.event.pull_request.labels.*.name, 'trigger: preview')
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     outputs:
       preview-url: ${{ steps.preview.outputs.url }}
       pr-number: ${{ github.event.pull_request.number }}
@@ -76,7 +78,7 @@ jobs:
           echo "${{ steps.preview.outputs.url }}" > preview-info/preview-url.txt
           echo "${{ github.event.pull_request.number }}" > preview-info/pr-number.txt
           echo "${{ github.event.pull_request.head.sha }}" > preview-info/commit-sha.txt
-          echo "realtime-js" > preview-info/package-name.txt
+          echo "functions-js" > preview-info/package-name.txt
           
       - name: Upload preview info
         uses: actions/upload-artifact@v4
