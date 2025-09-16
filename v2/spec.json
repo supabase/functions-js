@@ -1,0 +1,1969 @@
+{
+	"id": 0,
+	"name": "@supabase/functions-js",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 68,
+			"name": "FunctionRegion",
+			"kind": 8,
+			"kindString": "Enumeration",
+			"flags": {},
+			"children": [
+				{
+					"id": 69,
+					"name": "Any",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 46,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L46"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "any"
+					}
+				},
+				{
+					"id": 70,
+					"name": "ApNortheast1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 47,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L47"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "ap-northeast-1"
+					}
+				},
+				{
+					"id": 71,
+					"name": "ApNortheast2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 48,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L48"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "ap-northeast-2"
+					}
+				},
+				{
+					"id": 72,
+					"name": "ApSouth1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 49,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L49"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "ap-south-1"
+					}
+				},
+				{
+					"id": 73,
+					"name": "ApSoutheast1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 50,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L50"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "ap-southeast-1"
+					}
+				},
+				{
+					"id": 74,
+					"name": "ApSoutheast2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 51,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L51"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "ap-southeast-2"
+					}
+				},
+				{
+					"id": 75,
+					"name": "CaCentral1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 52,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L52"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "ca-central-1"
+					}
+				},
+				{
+					"id": 76,
+					"name": "EuCentral1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 53,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L53"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "eu-central-1"
+					}
+				},
+				{
+					"id": 77,
+					"name": "EuWest1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 54,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L54"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "eu-west-1"
+					}
+				},
+				{
+					"id": 78,
+					"name": "EuWest2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 55,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L55"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "eu-west-2"
+					}
+				},
+				{
+					"id": 79,
+					"name": "EuWest3",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 56,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L56"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "eu-west-3"
+					}
+				},
+				{
+					"id": 80,
+					"name": "SaEast1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 57,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L57"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "sa-east-1"
+					}
+				},
+				{
+					"id": 81,
+					"name": "UsEast1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 58,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L58"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "us-east-1"
+					}
+				},
+				{
+					"id": 82,
+					"name": "UsWest1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 59,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L59"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "us-west-1"
+					}
+				},
+				{
+					"id": 83,
+					"name": "UsWest2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 60,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L60"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "us-west-2"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration Members",
+					"children": [
+						69,
+						70,
+						71,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77,
+						78,
+						79,
+						80,
+						81,
+						82,
+						83
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 45,
+					"character": 12,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L45"
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "FunctionsClient",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 18,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L18"
+						}
+					],
+					"signatures": [
+						{
+							"id": 3,
+							"name": "new FunctionsClient",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 5,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 6,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 8,
+													"name": "customFetch",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "src/FunctionsClient.ts",
+															"line": 26,
+															"character": 6,
+															"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L26"
+														}
+													],
+													"type": {
+														"type": "reflection",
+														"declaration": {
+															"id": 9,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "node_modules/typescript/lib/lib.dom.d.ts",
+																	"line": 18095,
+																	"character": 17
+																},
+																{
+																	"fileName": "node_modules/@types/node/globals.d.ts",
+																	"line": 344,
+																	"character": 13
+																}
+															],
+															"signatures": [
+																{
+																	"id": 10,
+																	"name": "__type",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 11,
+																			"name": "input",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "reference",
+																						"name": "RequestInfo",
+																						"qualifiedName": "RequestInfo",
+																						"package": "typescript"
+																					},
+																					{
+																						"type": "reference",
+																						"name": "URL",
+																						"qualifiedName": "URL",
+																						"package": "typescript"
+																					}
+																				]
+																			}
+																		},
+																		{
+																			"id": 12,
+																			"name": "init",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"name": "RequestInit",
+																				"qualifiedName": "RequestInit",
+																				"package": "typescript"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"name": "Response",
+																				"qualifiedName": "Response",
+																				"package": "typescript"
+																			}
+																		],
+																		"name": "Promise",
+																		"qualifiedName": "Promise",
+																		"package": "typescript"
+																	}
+																},
+																{
+																	"id": 13,
+																	"name": "__type",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 14,
+																			"name": "input",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "intrinsic",
+																						"name": "string"
+																					},
+																					{
+																						"type": "reference",
+																						"name": "Request",
+																						"qualifiedName": "Request",
+																						"package": "typescript"
+																					},
+																					{
+																						"type": "reference",
+																						"name": "URL",
+																						"qualifiedName": "URL",
+																						"package": "typescript"
+																					}
+																				]
+																			}
+																		},
+																		{
+																			"id": 15,
+																			"name": "init",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"name": "RequestInit",
+																				"qualifiedName": "RequestInit",
+																				"package": "typescript"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"name": "Response",
+																				"qualifiedName": "Response",
+																				"package": "typescript"
+																			}
+																		],
+																		"name": "Promise",
+																		"qualifiedName": "Promise",
+																		"package": "typescript"
+																	}
+																}
+															]
+														}
+													}
+												},
+												{
+													"id": 7,
+													"name": "headers",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "src/FunctionsClient.ts",
+															"line": 25,
+															"character": 6,
+															"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L25"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															}
+														],
+														"name": "Record",
+														"qualifiedName": "Record",
+														"package": "typescript"
+													}
+												},
+												{
+													"id": 16,
+													"name": "region",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "src/FunctionsClient.ts",
+															"line": 27,
+															"character": 6,
+															"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L27"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"id": 68,
+														"name": "FunctionRegion"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"children": [
+														8,
+														7,
+														16
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "src/FunctionsClient.ts",
+													"line": 24,
+													"character": 7,
+													"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L24"
+												}
+											]
+										}
+									},
+									"defaultValue": "{}"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 1,
+								"name": "FunctionsClient"
+							}
+						}
+					]
+				},
+				{
+					"id": 20,
+					"name": "fetch",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 16,
+							"character": 12,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L16"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 21,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.dom.d.ts",
+									"line": 18095,
+									"character": 17
+								},
+								{
+									"fileName": "node_modules/@types/node/globals.d.ts",
+									"line": 344,
+									"character": 13
+								}
+							],
+							"signatures": [
+								{
+									"id": 22,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 23,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "RequestInfo",
+														"qualifiedName": "RequestInfo",
+														"package": "typescript"
+													},
+													{
+														"type": "reference",
+														"name": "URL",
+														"qualifiedName": "URL",
+														"package": "typescript"
+													}
+												]
+											}
+										},
+										{
+											"id": 24,
+											"name": "init",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "RequestInit",
+												"qualifiedName": "RequestInit",
+												"package": "typescript"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "Response",
+												"qualifiedName": "Response",
+												"package": "typescript"
+											}
+										],
+										"name": "Promise",
+										"qualifiedName": "Promise",
+										"package": "typescript"
+									}
+								},
+								{
+									"id": 25,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 26,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"name": "Request",
+														"qualifiedName": "Request",
+														"package": "typescript"
+													},
+													{
+														"type": "reference",
+														"name": "URL",
+														"qualifiedName": "URL",
+														"package": "typescript"
+													}
+												]
+											}
+										},
+										{
+											"id": 27,
+											"name": "init",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "RequestInit",
+												"qualifiedName": "RequestInit",
+												"package": "typescript"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "Response",
+												"qualifiedName": "Response",
+												"package": "typescript"
+											}
+										],
+										"name": "Promise",
+										"qualifiedName": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 18,
+					"name": "headers",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 14,
+							"character": 12,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L14"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						],
+						"name": "Record",
+						"qualifiedName": "Record",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 19,
+					"name": "region",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 15,
+							"character": 12,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L15"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 68,
+						"name": "FunctionRegion"
+					}
+				},
+				{
+					"id": 17,
+					"name": "url",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 13,
+							"character": 12,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L13"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 31,
+					"name": "invoke",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 49,
+							"character": 8,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L49"
+						}
+					],
+					"signatures": [
+						{
+							"id": 32,
+							"name": "invoke",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Invokes a function"
+									}
+								]
+							},
+							"typeParameter": [
+								{
+									"id": 33,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"default": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 34,
+									"name": "functionName",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The name of the Function to invoke."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 35,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Options for invoking the Function."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 36,
+										"name": "FunctionInvokeOptions"
+									},
+									"defaultValue": "{}"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 84,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 33,
+												"name": "T"
+											}
+										],
+										"name": "FunctionsResponse"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 28,
+					"name": "setAuth",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/FunctionsClient.ts",
+							"line": 40,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L40"
+						}
+					],
+					"signatures": [
+						{
+							"id": 29,
+							"name": "setAuth",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Updates the authorization header"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 30,
+									"name": "token",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "the new jwt token sent in the authorisation header"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						20,
+						18,
+						19,
+						17
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						31,
+						28
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/FunctionsClient.ts",
+					"line": 12,
+					"character": 13,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/FunctionsClient.ts#L12"
+				}
+			]
+		},
+		{
+			"id": 46,
+			"name": "FunctionsError",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 47,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 20,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L20"
+						}
+					],
+					"signatures": [
+						{
+							"id": 48,
+							"name": "new FunctionsError",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 49,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 50,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "'FunctionsError'"
+								},
+								{
+									"id": 51,
+									"name": "context",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 46,
+								"name": "FunctionsError"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "Error.constructor"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "Error.constructor"
+					}
+				},
+				{
+					"id": 52,
+					"name": "context",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L19"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						47
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						52
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 18,
+					"character": 13,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L18"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "Error",
+					"qualifiedName": "Error",
+					"package": "typescript"
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 53,
+					"name": "FunctionsFetchError"
+				},
+				{
+					"type": "reference",
+					"id": 58,
+					"name": "FunctionsHttpError"
+				},
+				{
+					"type": "reference",
+					"id": 63,
+					"name": "FunctionsRelayError"
+				}
+			]
+		},
+		{
+			"id": 53,
+			"name": "FunctionsFetchError",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 54,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 28,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L28"
+						}
+					],
+					"signatures": [
+						{
+							"id": 55,
+							"name": "new FunctionsFetchError",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 56,
+									"name": "context",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 53,
+								"name": "FunctionsFetchError"
+							},
+							"overwrites": {
+								"type": "reference",
+								"id": 48,
+								"name": "FunctionsError.constructor"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"id": 47,
+						"name": "FunctionsError.constructor"
+					}
+				},
+				{
+					"id": 57,
+					"name": "context",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L19"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 52,
+						"name": "FunctionsError.context"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						54
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						57
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 27,
+					"character": 13,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L27"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 46,
+					"name": "FunctionsError"
+				}
+			]
+		},
+		{
+			"id": 58,
+			"name": "FunctionsHttpError",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 59,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 40,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L40"
+						}
+					],
+					"signatures": [
+						{
+							"id": 60,
+							"name": "new FunctionsHttpError",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 61,
+									"name": "context",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 58,
+								"name": "FunctionsHttpError"
+							},
+							"overwrites": {
+								"type": "reference",
+								"id": 48,
+								"name": "FunctionsError.constructor"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"id": 47,
+						"name": "FunctionsError.constructor"
+					}
+				},
+				{
+					"id": 62,
+					"name": "context",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L19"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 52,
+						"name": "FunctionsError.context"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						59
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						62
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 39,
+					"character": 13,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L39"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 46,
+					"name": "FunctionsError"
+				}
+			]
+		},
+		{
+			"id": 63,
+			"name": "FunctionsRelayError",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 64,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 34,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L34"
+						}
+					],
+					"signatures": [
+						{
+							"id": 65,
+							"name": "new FunctionsRelayError",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 66,
+									"name": "context",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 63,
+								"name": "FunctionsRelayError"
+							},
+							"overwrites": {
+								"type": "reference",
+								"id": 48,
+								"name": "FunctionsError.constructor"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"id": 47,
+						"name": "FunctionsError.constructor"
+					}
+				},
+				{
+					"id": 67,
+					"name": "context",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L19"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 52,
+						"name": "FunctionsError.context"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						64
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						67
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 33,
+					"character": 13,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L33"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 46,
+					"name": "FunctionsError"
+				}
+			]
+		},
+		{
+			"id": 36,
+			"name": "FunctionInvokeOptions",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 63,
+					"character": 12,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L63"
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 37,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"children": [
+						{
+							"id": 44,
+							"name": "body",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The body of the request."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/types.ts",
+									"line": 79,
+									"character": 2,
+									"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L79"
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "File",
+										"qualifiedName": "File",
+										"package": "typescript"
+									},
+									{
+										"type": "reference",
+										"name": "Blob",
+										"qualifiedName": "Blob",
+										"package": "typescript"
+									},
+									{
+										"type": "reference",
+										"name": "ArrayBuffer",
+										"qualifiedName": "ArrayBuffer",
+										"package": "typescript"
+									},
+									{
+										"type": "reference",
+										"name": "FormData",
+										"qualifiedName": "FormData",
+										"package": "typescript"
+									},
+									{
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "Uint8Array",
+												"qualifiedName": "Uint8Array",
+												"package": "typescript"
+											}
+										],
+										"name": "ReadableStream",
+										"qualifiedName": "ReadableStream",
+										"package": "typescript"
+									},
+									{
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Record",
+										"qualifiedName": "Record",
+										"package": "typescript"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						},
+						{
+							"id": 38,
+							"name": "headers",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Object representing the headers to send with the request."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/types.ts",
+									"line": 67,
+									"character": 2,
+									"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L67"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 39,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "src/types.ts",
+											"line": 67,
+											"character": 12,
+											"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L67"
+										}
+									],
+									"indexSignature": {
+										"id": 40,
+										"name": "__index",
+										"kind": 8192,
+										"kindString": "Index signature",
+										"flags": {},
+										"parameters": [
+											{
+												"id": 41,
+												"name": "key",
+												"kind": 32768,
+												"flags": {},
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										],
+										"type": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							}
+						},
+						{
+							"id": 42,
+							"name": "method",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The HTTP verb of the request"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/types.ts",
+									"line": 71,
+									"character": 2,
+									"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L71"
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "literal",
+										"value": "POST"
+									},
+									{
+										"type": "literal",
+										"value": "GET"
+									},
+									{
+										"type": "literal",
+										"value": "PUT"
+									},
+									{
+										"type": "literal",
+										"value": "PATCH"
+									},
+									{
+										"type": "literal",
+										"value": "DELETE"
+									}
+								]
+							}
+						},
+						{
+							"id": 43,
+							"name": "region",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The Region to invoke the function in."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/types.ts",
+									"line": 75,
+									"character": 2,
+									"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L75"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 68,
+								"name": "FunctionRegion"
+							}
+						},
+						{
+							"id": 45,
+							"name": "signal",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The AbortSignal to use for the request."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/types.ts",
+									"line": 90,
+									"character": 2,
+									"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L90"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AbortSignal",
+								"qualifiedName": "AbortSignal",
+								"package": "typescript"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								44,
+								38,
+								42,
+								43,
+								45
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 63,
+							"character": 36,
+							"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L63"
+						}
+					]
+				}
+			}
+		},
+		{
+			"id": 84,
+			"name": "FunctionsResponse",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/types.ts",
+					"line": 16,
+					"character": 12,
+					"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/types.ts#L16"
+				}
+			],
+			"typeParameters": [
+				{
+					"id": 85,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {}
+				}
+			],
+			"type": {
+				"type": "union",
+				"types": [
+					{
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"id": 85,
+								"name": "T"
+							}
+						],
+						"name": "FunctionsResponseSuccess"
+					},
+					{
+						"type": "reference",
+						"name": "FunctionsResponseFailure"
+					}
+				]
+			}
+		}
+	],
+	"groups": [
+		{
+			"title": "Enumerations",
+			"children": [
+				68
+			]
+		},
+		{
+			"title": "Classes",
+			"children": [
+				1,
+				46,
+				53,
+				58,
+				63
+			]
+		},
+		{
+			"title": "Type Aliases",
+			"children": [
+				36,
+				84
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "src/index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/supabase/functions-js/blob/dc5eee7/src/index.ts#L1"
+		}
+	]
+}
